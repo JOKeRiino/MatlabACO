@@ -89,10 +89,12 @@
 q_0 = .2770;
 numAnts = 100;
 beta = 1;
-maxIts = 200;
-numCities = 40;
+maxIts = 50;
+numCities = 10;
 Q = 1;
 rho = .4817;
+
+cityStruct = struct("x", 0, "y", 0, "id", 0, "name", "AAA", "price", 0, "pop", 0);
 
 params = struct('q_0', q_0, 'numAnts', numAnts, 'beta', beta, 'Q', Q, 'rho', rho);
 
@@ -192,8 +194,10 @@ while numIts < maxIts;
 			tau(fromCity, toCity) = tau(fromCity, toCity) + Q / score;
 		end
 	end
-	
+	%//Display score every iteration
 	scores(numIts) = bestScore;
+    figure(3);
+    plot([cities(bestPath).x cities(bestPath(1)).x],  [cities(bestPath).y cities(bestPath(1)).y], 'bo-');
 	
 	% Perform the pheromone evaporation
 	tau = (1 - rho) * tau;
@@ -201,11 +205,13 @@ while numIts < maxIts;
 	numIts = numIts + 1;
 end
 
+%//Display best score at the end.
 disp(bestScore);
 figure(2);
 plot([cities(bestPath).x cities(bestPath(1)).x],  [cities(bestPath).y cities(bestPath(1)).y], 'bo-');
 
-figure(3);
-plot(1:maxIts, scores);
+%//Commented out score figure as not important for now
+%figure(3);
+%plot(1:maxIts, scores);
 
 
