@@ -90,7 +90,7 @@ q_0 = .2770;
 numAnts = 100;
 beta = 1;
 maxIts = 200;
-numCities = 10;
+numCities = 40;
 Q = 1;
 rho = .4817;
 
@@ -103,7 +103,7 @@ disp(params);
 
 
 % Create list of cities and plot (will simply be a circle for now)
-cities = genCities(numCities, 'rand');
+cities = genRandCities(numCities);
 figure(1);
 plot([cities(:).x],[cities(:).y], 'bo-')
 
