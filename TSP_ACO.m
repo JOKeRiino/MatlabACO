@@ -87,14 +87,12 @@
 %    SETTING PARAMS     %
 % exploit vs explore
 q_0 = .2770;
-numAnts = 100;
+numAnts = 10;
 beta = 1;
-maxIts = 50;
+maxIts = 20;
 numCities = 10;
 Q = 1;
 rho = .4817;
-
-cityStruct = struct("x", 0, "y", 0, "id", 0, "name", "AAA", "price", 0, "pop", 0);
 
 params = struct('q_0', q_0, 'numAnts', numAnts, 'beta', beta, 'Q', Q, 'rho', rho);
 
@@ -103,9 +101,9 @@ params = struct('q_0', q_0, 'numAnts', numAnts, 'beta', beta, 'Q', Q, 'rho', rho
 fprintf('Running Ant Colony Optimization on %i cities with the following parameters:\n', numCities);
 disp(params);
 
-
-% Create list of cities and plot (will simply be a circle for now)
+% Create list of cities and plot
 cities = genRandCities(numCities);
+
 figure(1);
 plot([cities(:).x],[cities(:).y], 'bo-')
 
