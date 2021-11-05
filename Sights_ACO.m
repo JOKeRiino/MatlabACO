@@ -43,9 +43,9 @@ plot([destSights(:).x],[destSights(:).y],'bo-')
 %    SETTING PARAMS     %
 % exploit vs explore
 q_0 = .2770;
-numAnts = 20;
+numAnts = 200;
 beta = 1;
-maxIts = 100;
+maxIts = 200;
 Q = 1;
 rho = .4817;
 
