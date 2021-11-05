@@ -10,8 +10,8 @@ Below are some figures that show the progress made:
 
 ## MATLAB Figure of Sightseeing Locations:
 
-![MATLAB Figure of Sightseeing Locations in Berlin](https://github.com/JOKeRiino/MatlabACO/blob/master/cityFig.png?raw=true)
+![MATLAB Figure of Sightseeing Locations in Berlin](https://github.com/JOKeRiino/MatlabACO/blob/master/cityFig.png)
 
-## MATLAB First solve with ACO
+## MATLAB First solve with ACO:
 
-![MATLAB First solve with ACO](https://github.com/JOKeRiino/MatlabACO/blob/master/sightsSolved.png?raw=true)
+![MATLAB First solve with ACO](https://github.com/JOKeRiino/MatlabACO/blob/master/sightsSolved.png)
