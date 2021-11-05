@@ -87,10 +87,10 @@
 %    SETTING PARAMS     %
 % exploit vs explore
 q_0 = .2770;
-numAnts = 10;
+numAnts = 20;
 beta = 1;
-maxIts = 20;
-numCities = 10;
+maxIts = 100;
+numCities = 100;
 Q = 1;
 rho = .4817;
 
@@ -194,8 +194,8 @@ while numIts < maxIts;
 	end
 	%//Display score every iteration
 	scores(numIts) = bestScore;
-    figure(3);
-    plot([cities(bestPath).x cities(bestPath(1)).x],  [cities(bestPath).y cities(bestPath(1)).y], 'bo-');
+    %figure(3);
+    %plot([cities(bestPath).x cities(bestPath(1)).x],  [cities(bestPath).y cities(bestPath(1)).y], 'bo-');
 	
 	% Perform the pheromone evaporation
 	tau = (1 - rho) * tau;
