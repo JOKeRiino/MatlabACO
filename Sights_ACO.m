@@ -1,4 +1,4 @@
-%All Sights used in Berlin as Data-Structures
+%ST: All Sights used in Berlin as Data-Structures
 centralStation = struct("y", 52.52514262794553, "x", 13.369401998549902, ...
     "id", 1, "price", 0, "pop", 0, "duration", 0, "name", "station");
 brandenburgGate = struct("y", 52.51640515728868, "x", 13.377704098549703, ...
@@ -22,12 +22,12 @@ techMuseum = struct("y", 52.498789620642924, "x", 13.377916785055444, ...
 zoo = struct("y", 52.508037121902355, "x", 13.337754698549514, ...
     "id", 11, "price", 16, "pop", 7, "duration", 150, "name", "zoo");
 
-%destCities contains all City-structs above
+%ST: destSights contains all Sight-structs above
 destSights = [centralStation,brandenburgGate,reichstagBuilding,...
     memorial,eastSideGallery,checkpointCharlie,tvTower,oldNationalGallery...
     ddrMuseum,techMuseum,zoo];
 
-%Output all cities in console
+%ST: Output all cities in console
 %for city = destSights
     %disp(city)
 %end
@@ -38,7 +38,7 @@ hold on;
 plot([destSights(:).x],[destSights(:).y],'bo-')
 
 
-%                               Algorithm Edit Comments
+% ST:                           Algorithm Edit Comments
 % For variable and param explanation please visit TSP_ACO
 %    SETTING PARAMS     %
 % exploit vs explore
@@ -144,13 +144,13 @@ while numIts < maxIts;
 	numIts = numIts + 1;
 end
 
-%//Display best score at the end.
+%ST: Display best score at the end.
 disp(bestScore);
 figure(2);
 text([destSights(:).x],[destSights(:).y],[destSights(:).name])
 hold on;
 plot([destSights(bestPath).x destSights(bestPath(1)).x],  [destSights(bestPath).y destSights(bestPath(1)).y], 'bo-');
 
-%//Commented out score figure as not important for now
+%ST: Commented out score figure as not important for now
 %figure(3);
 %plot(1:maxIts, scores);

@@ -192,7 +192,7 @@ while numIts < maxIts;
 			tau(fromCity, toCity) = tau(fromCity, toCity) + Q / score;
 		end
 	end
-	%//Display score every iteration
+	%ST: Display score every iteration
 	scores(numIts) = bestScore;
     %figure(3);
     %plot([cities(bestPath).x cities(bestPath(1)).x],  [cities(bestPath).y cities(bestPath(1)).y], 'bo-');
@@ -203,12 +203,12 @@ while numIts < maxIts;
 	numIts = numIts + 1;
 end
 
-%//Display best score at the end.
+%ST: Display best score at the end.
 disp(bestScore);
 figure(2);
 plot([cities(bestPath).x cities(bestPath(1)).x],  [cities(bestPath).y cities(bestPath(1)).y], 'bo-');
 
-%//Commented out score figure as not important for now
+%ST: Commented out score figure as not important for now
 %figure(3);
 %plot(1:maxIts, scores);
 
