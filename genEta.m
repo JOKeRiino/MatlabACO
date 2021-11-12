@@ -1,6 +1,7 @@
 function eta = genEta(cities)
 numCities = length(cities);
 eta = zeros(numCities, numCities);
+% ST: This eta is essentially the TSP. We have to use our own values for this.
 
 % Calculate the upper triangle of eta
 for fromCity = 1:numCities

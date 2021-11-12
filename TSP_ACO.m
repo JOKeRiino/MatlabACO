@@ -45,7 +45,7 @@
 %   for ant_k in colony
 %     place ant_k at random city
 %     while ant has not visited all cities
-%         with probabily q_0, ant_k will move to the city with best tau and eta
+%         with probability q_0, ant_k will move to the city with best tau and eta
 %         otherwise, ant_k will move to a random city based on p_k
 %     end
 %
@@ -87,10 +87,10 @@
 %    SETTING PARAMS     %
 % exploit vs explore
 q_0 = .2770;
-numAnts = 20;
+numAnts = 1;
 beta = 1;
-maxIts = 100;
-numCities = 100;
+maxIts = 10;
+numCities = 10;
 Q = 1;
 rho = .4817;
 
@@ -113,6 +113,7 @@ tau = ones(numCities, numCities);
 % Eta is a static matrix based on a known heuristic with known inputs
 % so we can simply populate it now in advance
 eta = genEta(cities);
+%ST: disp(eta);
 
 % Creates an ititial path
 bestPath = 1:numCities;
@@ -121,7 +122,7 @@ fprintf('Initial Score: %f', bestScore);
 numIts = 1;
 scores = zeros(1, maxIts);
 
-while numIts < maxIts;
+while numIts < maxIts
 	% for ant_k in colony
 	for ant_k = 1:numAnts
 		
@@ -141,6 +142,8 @@ while numIts < maxIts;
 			
 			% Here we find the destination city s
 			if (rand < q_0)
+                %ST: tilde ignores the first output of the max function
+                %ST: This function is also important for finding a path
 				[~, sInd] = max(tau(r, unvisited) .* eta(r, unvisited).^beta);
 				s = unvisited(sInd);
 			else
@@ -174,6 +177,7 @@ while numIts < maxIts;
 			% Add s to the path and remove it from the unvisited list
 			path(currInd + 1) =  s;
 			unvisited(sInd) = [];
+
 		end
 		
 		score = scorePath(path, cities);
@@ -192,10 +196,8 @@ while numIts < maxIts;
 			tau(fromCity, toCity) = tau(fromCity, toCity) + Q / score;
 		end
 	end
-	%ST: Display score every iteration
+
 	scores(numIts) = bestScore;
-    %figure(3);
-    %plot([cities(bestPath).x cities(bestPath(1)).x],  [cities(bestPath).y cities(bestPath(1)).y], 'bo-');
 	
 	% Perform the pheromone evaporation
 	tau = (1 - rho) * tau;
