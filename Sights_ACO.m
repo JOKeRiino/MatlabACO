@@ -94,6 +94,7 @@ tau = ones(length(destSights),length(destSights));
 % Eta is a static matrix based on a known heuristic with known inputs
 % so we can simply populate it now in advance
 eta = genEta(destSights);
+disp(eta);
 
 % Creates an ititial path
 bestPath = 1:length(destSights);
