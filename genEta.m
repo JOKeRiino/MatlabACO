@@ -9,7 +9,7 @@ for fromCity = 1:numCities
 		if (fromCity == toCity)
 			continue;
 		else
-			eta(fromCity, toCity) = 1.0/cityDistance(cities(fromCity), cities(toCity));
+			eta(fromCity, toCity) = 1.0/cityDistance(cities(fromCity), cities(toCity)); 
 		end
 	end
 end

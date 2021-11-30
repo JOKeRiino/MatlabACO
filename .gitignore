@@ -7,3 +7,5 @@ OS junk files [Tt]humbs.db *.DS_Store
 #Project files [Bb]uild/
 
 #Subversion files .svn
+
+*.asv

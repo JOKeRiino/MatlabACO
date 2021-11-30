@@ -144,7 +144,7 @@ while numIts < maxIts
 			if (rand < q_0)
                 %ST: tilde ignores the first output of the max function
                 %ST: This function is also important for finding a path
-				[~, sInd] = max(tau(r, unvisited) .* eta(r, unvisited).^beta);
+				[~, sInd] = max(tau(r, unvisited) .* eta(r, unvisited).^beta .* cst(unvisited).^gamma);
 				s = unvisited(sInd);
 			else
 				vec = tau(r, unvisited) .* (eta(r, unvisited).^beta);
