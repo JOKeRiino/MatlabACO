@@ -113,7 +113,6 @@ tau = ones(numCities, numCities);
 % Eta is a static matrix based on a known heuristic with known inputs
 % so we can simply populate it now in advance
 eta = genEta(cities);
-%ST: disp(eta);
 
 % Creates an ititial path
 bestPath = 1:numCities;
